@@ -10,11 +10,22 @@ app.use(express.json()); //same as body parser
 const Menu =require('./models/menu')
 
 
- 
 
-app.get('/', function (req, res) {
+// middleware function
+
+const logRequest=(req,res,next)=>{
+  console.log(`${new Date().toLocaleString()} Request Made to : ${req.originalUrl}`);
+  next();// this signals the current middle ware function 
+}
+
+//apply log in to all points
+app.use(logRequest)
+
+// app.get('/',logRequest, function (req, res) {  // this will apply log in to only home page '/'
+app.get('/',logRequest, function (req, res) {
   res.send('Welcome')
 })
+
 
 
 const personRoutes =require('./routes/personRoutes');
