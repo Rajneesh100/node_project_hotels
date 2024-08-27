@@ -5,25 +5,6 @@ const Person =require('./../models/person')
 // this is for pull
 
 router.post('/',async (req,res)=>{
-    
-        // const data =req.body;
-        // const newPerson= new Person(data)
-        /*
-        //save function no longer accepts callback
-        //save the person details in db
-        newPerson.save((error, savedPerson)=>{
-            if(error){
-                console.log('error in saving person: ,',error)
-                res.status(500).json({error:'Internal server error'})
-            }else
-            {
-                console.log("person saved")
-                res.status(200).json(savedPerson)
-            }
-        })
-
-        */
-
         try{
             const data =req.body;
             const newPerson= new Person(data)

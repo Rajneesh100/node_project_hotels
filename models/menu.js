@@ -17,7 +17,7 @@ const menuschema = new mongoose.Schema({
 
 })
 
-
+                                          // name of the table
 const menu =mongoose.model('menu', menuschema, 'menu')
 
 module.exports=menu;
