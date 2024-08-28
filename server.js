@@ -39,8 +39,8 @@ const localAuthMidddleware =passport.authenticate('local',{session:false});
 const personRoutes =require('./routes/personRoutes');
 const menuRoutes =require('./routes/menuRoutes');
 app.use('/menu',menuRoutes);
-app.use('/person',localAuthMidddleware,personRoutes);// with authentication
+// app.use('/person',localAuthMidddleware,personRoutes);// with authentication
 
-// app.use('/person',personRoutes); // no auth
+app.use('/person',personRoutes); // no auth
 
 app.listen(PORT,()=>{console.log("Server listing on port 3000")})

@@ -1,7 +1,7 @@
 const mongoose= require('mongoose')
 require('dotenv').config()
-const mongoUrl='mongodb://localhost:27017/restra'
-// mongoUrl= process.env.DB_URL
+// const mongoUrl='mongodb://localhost:27017/restra'
+mongoUrl= process.env.DB_URL
 
 mongoose.connect(mongoUrl,{
     useNewUrlParser:true,
