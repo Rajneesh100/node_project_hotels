@@ -30,6 +30,6 @@ const jwtAuthMiddleWare=(req,res,next)=>{
 
 const genrateToken =(userData)=>{
     // this user data should be proper object other wise expiry may not work
-    return jwt.sign({userData},process.env.JWT_SECRET,{expiresIn:300000})
+    return jwt.sign({userData},process.env.JWT_SECRET,{expiresIn:300})// 5 minites of token life
 }
 module.exports={jwtAuthMiddleWare,genrateToken};
